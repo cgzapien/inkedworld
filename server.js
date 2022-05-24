@@ -4,15 +4,14 @@ require("dotenv").config()
 const expressJwt = require("express-jwt")
 const morgan = require("morgan")
 const mongoose = require("mongoose")
-const PORT = process.env.PORT || 9000
-const path = require("path")
+const PORT = process.env.PORT || 8000
+const cors = require("cors")
 
 app.use(express.json())
 app.use(morgan("dev"))
-app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:27017/capstone-db",
+   "mongodb://localhost:27017/capstone-db",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -23,6 +22,7 @@ mongoose.connect(
 )
 
 //routes
+app.get("/", (req, res) => {res.send("Hello from Express!")})
 app.use("/auth", require("./routes/AuthRouter"))
 app.use('/api', expressJwt({ secret: process.env.SECRET,  algorithms: ['HS256'] }))
 app.use("/api/thread", require("./routes/ThreadRouter"))
@@ -37,15 +37,7 @@ app.use((err, req, res, next) => {
   }
   return res.send({errMsg: err.message})
 })
-if(process.env.NODE_ENV === "production"){
-  app.use(express.static("client/build"))
-}
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
-
-
 //port 
 app.listen(PORT, () => {
-  console.log("App is listening on PORT 9000")
+  console.log("App is listening on PORT 8000")
 })

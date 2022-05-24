@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Grid, Paper, Avatar, TextField, Button, Typography, Link, CssBaseline, Box } from "@mui/material"
 import tattooImage from "/Users/zapien/Desktop/deployed apps/Ink/client/src/media/artist.jpg"
 import SendIcon from '@mui/icons-material/Send';
@@ -48,8 +47,9 @@ export default function AuthForm(props){
         }}
         >
         <Box item xs={12} sm={8} md={5} component="form" onSubmit={submit}>
-          <Avatar style={{backgroundColor: "#102B3F", margin: "auto"}}>
-            <LockIcon />
+          <Typography variant="h3">Inked World</Typography>
+          <Avatar style={{backgroundColor: "#102B3F", margin: "auto"}} sx={{ width: 26, height: 26 }}>
+            <LockIcon fontSize="small"/>
           </Avatar>
           <Typography component="h1"  variant="h4" style={{marginTop: "10px"}}>{formtitle}</Typography>
           <Typography style={{color: 'red'}}>{errmsg}</Typography>
