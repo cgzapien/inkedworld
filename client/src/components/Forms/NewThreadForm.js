@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 import { Button, TextField } from "@mui/material";
 
 export default function NewThreadForm(props){
-  const {addThread} = props
+  const {addThread, setToggleForm} = props
   const threadInitInputs = {
     threadName: "",
     topic: ""
@@ -22,6 +22,7 @@ export default function NewThreadForm(props){
   function handleSubmit(e){
     e.preventDefault()
     addThread(threadInputs)
+    setToggleForm(prevState => ! prevState)
     setThreadInputs({
       threadName: "",
       topic: ""
