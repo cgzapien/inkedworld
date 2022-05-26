@@ -10,21 +10,28 @@ export default function Home(){
   return (
     <div style={{display: "relative", marginLeft: "10px", height: "100vh"}}>
       <Typography 
-      sx={{textAlign: "center"}} 
+      sx={{textAlign: "center", marginTop: 5}} 
       variant="h5"
       >Welcome to Inked World, a tattoo artist community. Where you can interact with other artists relating to the tattoo world. Here you can post threads about certain topics and other users are able to comment on them. Our goal is to provide a sense of community to tattoo artist across the world.
       </Typography>
+      <br/>
       {toggleForm ? 
         <NewThreadForm addThread={addThread} setToggleForm={setToggleForm}/>
       :
-      <Button variant="contained" onClick={() => setToggleForm((prevState) => !prevState )}>Create Thread</Button>
+      <div style={{textAlign: "center"}}>
+        <Button variant="outlined" onClick={() => setToggleForm((prevState) => !prevState )}>Create Thread</Button>
+      </div>
       }
-      <Typography>Threads you've created</Typography>
-      {userThreads !== undefined ? 
-        userThreads.map(thread => <UserThread key={thread._id} {...thread}/>)
-        :
-        <></>
-      }
+      <Typography variant="h4" sx={{textAlign: "center", margin: "10px 0"}}>Your Threads</Typography>
+      <div 
+      style={{marginTop: "55px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr"}}
+      >
+        {userThreads !== undefined ? 
+          userThreads.map(thread => <UserThread key={thread._id} {...thread}/>)
+          :
+          <></>
+        }
+      </div>
     </div>
   )
 }

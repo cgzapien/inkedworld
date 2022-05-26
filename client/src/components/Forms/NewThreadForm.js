@@ -29,7 +29,7 @@ export default function NewThreadForm(props){
     })
   }
   return (
-    <Box sx={{margin: 5}} component="form" onSubmit={handleSubmit}>
+    <Box sx={{margin: 5, display: "flex", justifyContent: "center", alignItems: "flex-end"}} component="form" onSubmit={handleSubmit}>
         <TextField
         name="threadName"
         value={threadName}

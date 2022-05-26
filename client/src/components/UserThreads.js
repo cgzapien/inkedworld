@@ -10,17 +10,15 @@ export default function UserThread(props){
   const {threadName, topic, _id, dateCreated} = props
   const date = new Date(dateCreated).toLocaleDateString()
   return (
-    <div className="userThread">
-      <CssBaseline/>
-      <Container
-      >
+    <div className="userThread" style={{textAlign: "center"}}>
+      {/* <CssBaseline/> */}
         <Paper variant="outlined" square >
           <Typography>Title: {threadName}</Typography>
           <Typography>Topic: {topic}</Typography>
           <Typography>Created on: {date}</Typography>
           <Button onClick={() => deleteThread(_id)}><Typography variant="caption">Delete</Typography></Button>
         </Paper>
-      </Container>
+      
     </div>
   )
 }
