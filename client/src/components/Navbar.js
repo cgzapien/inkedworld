@@ -8,7 +8,6 @@ import AppBar from '@mui/material/AppBar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeIcon from '@mui/icons-material/Home';
 import CreateIcon from '@mui/icons-material/Create';
@@ -17,7 +16,7 @@ import { AppContext } from "../Context/AppProvider";
 
 
 export default function Navbar(){
-  const {user: {username}, logout} = useContext(AppContext)
+  const { logout} = useContext(AppContext)
   return (
     <div>
       <AppBar position="static" color="inherit" sx={{display: "inline"}}>

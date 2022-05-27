@@ -14,17 +14,11 @@ export default function PublicThreadDetails(props) {
     user
   } = props
   const date = new Date(dateCreated).toLocaleDateString()
-  const linkStyles = {
-    color: "#000000"
-  }
-  function getUser(){
+  useEffect(() => {
     axios.get(`/auth/${user}`)
       .then(res => setUsername(res.data))
       .catch(err => console.log(err))
-  }
-  useEffect(() => {
-    getUser()
-  }, [])
+  })
   return (
     <TableRow >
       <TableCell><Link to={`/thread/${_id}`} className="threadLink" >{threadName}</Link></TableCell>

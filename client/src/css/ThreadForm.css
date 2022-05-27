@@ -1,0 +1,11 @@
+.threadForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.threadForm > div {
+  width: 200px;
+}
+.threadForm > button {
+  width: 150px;
+}

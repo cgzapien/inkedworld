@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../Context/AppProvider";
-import { Button, Container, CssBaseline, Paper, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import Divider from '@mui/material/Divider';
+import { Button, Paper, Typography } from "@mui/material";
+
 
 
 export default function UserThread(props){

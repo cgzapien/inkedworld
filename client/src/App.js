@@ -15,7 +15,7 @@ import "./style.css"
 export default function App(){
   const { token } = useContext(AppContext)
   return (
-    <div>
+    <div className="App">
       {token && <Navbar />}
       <Switch>
         <Route 

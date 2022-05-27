@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Table, TableContainer, Typography, TableHead, TableCell, TableBody, TableRow } from "@mui/material";
+import { Table, TableContainer, Typography, TableHead, TableCell, TableBody } from "@mui/material";
 import { AppContext } from "../Context/AppProvider";
 import PublicThreadDetails from "./PublicThreadDetails";
 
@@ -11,10 +11,10 @@ export default function Threads(){
       <TableContainer>
         <Table>
         <TableHead>
-            <TableCell>Title</TableCell>
-            <TableCell>Topic</TableCell>
-            <TableCell>Created by</TableCell>
-            <TableCell>Date created</TableCell>
+            <TableCell><b>Title</b></TableCell>
+            <TableCell><b>Topic</b></TableCell>
+            <TableCell><b>Created by</b></TableCell>
+            <TableCell><b>Date created</b></TableCell>
           </TableHead>
           <TableBody>
             {allThreads.map(thread => <PublicThreadDetails key={thread._id} {...thread}/>)}

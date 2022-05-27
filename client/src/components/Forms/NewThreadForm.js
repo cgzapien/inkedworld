@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Button, TextField } from "@mui/material";
-
+import "../../css/ThreadForm.css"
 export default function NewThreadForm(props){
   const {addThread, setToggleForm} = props
   const threadInitInputs = {
@@ -22,26 +21,26 @@ export default function NewThreadForm(props){
   function handleSubmit(e){
     e.preventDefault()
     addThread(threadInputs)
-    setToggleForm(prevState => ! prevState)
+    setToggleForm(prevState => !prevState)
     setThreadInputs({
       threadName: "",
       topic: ""
     })
   }
   return (
-    <Box sx={{margin: 5, display: "flex", justifyContent: "center", alignItems: "flex-end"}} component="form" onSubmit={handleSubmit}>
+    <Box className="threadForm" component="form" onSubmit={handleSubmit}>
         <TextField
         name="threadName"
         value={threadName}
-        placeholder="thread name"
-        variant="standard"
-        label="thread name"
+        placeholder="share something"
+        variant="outlined"
+        label="share something"
         onChange={handleChange}
         ></TextField>
-      <FormControl style={{marginLeft: "10px"}} >
+      <FormControl >
         <InputLabel id="topics">topic</InputLabel>
         <Select
-          variant="standard"
+          variant="outlined"
           labelId="topics"
           id="demo-simple-select"
           name="topic"
@@ -58,7 +57,8 @@ export default function NewThreadForm(props){
           <MenuItem name="topic" value="materials">materials</MenuItem>
         </Select>
       </FormControl>
-        <Button type="submit" variant="standard">Submit Thread</Button>
+      <Button type="click" variant="outlined" onClick={() => setToggleForm(prevState => !prevState)}>Cancel</Button>
+      <Button style={{padding: "10px"}} type="submit" variant="outlined">Submit Thread</Button>
     </Box>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Button, Typography, TextField, Divider } from "@mui/material";
+import { Button, Typography, TextField } from "@mui/material";
 
 import Comments from "./Comments"
 
@@ -73,7 +73,7 @@ export default function ThreadDetails(){
   useEffect(() => {
     getThread()
     getComments()
-  }, [])
+  })
   return (
     <div style={{marginLeft: "10px"}}>
       <Typography variant="h5"><u>Title: </u>{threadName}</Typography>

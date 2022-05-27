@@ -56,11 +56,11 @@ export default function Comments(props){
   useEffect(() => {
     getCommentsOnComments()
     getUser()
-  }, [])
+  })
   return (
     <div style={{margin: "10px 0px"}}>
       <Icon fontSize="small"><PersonIcon/></Icon> <span>{username} - {threadcomment}</span> <span>{date}</span><br/>
-      {/* <Button style={{marginLeft: '20px'}} onClick={() => deleteComment(_id)}><Typography variant="caption">-Delete-</Typography></Button> */}
+      <Button style={{marginLeft: '20px'}} onClick={() => deleteComment(_id)}><Typography variant="caption">-Delete-</Typography></Button>
       <Button style={{marginLeft: '20px'}} onClick={toggleCommentReply} ><Typography variant="caption">-Reply-</Typography></Button>
       <br/>
       {commentsOnCommentsList === undefined ? 

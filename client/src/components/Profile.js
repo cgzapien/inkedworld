@@ -1,10 +1,7 @@
 import React, {useState, useContext} from "react";
 import { Box, Button, FormLabel, Grid, TextField, Typography } from "@mui/material";
-import { styled } from '@mui/material/styles';
-import FormControlLabel from '@mui/material/FormControlLabel'
 import { AppContext } from "../Context/AppProvider";
 import axios from "axios";
-import { ClassNames } from "@emotion/react";
 
 export default function Profile(){
   const {user: { membersince, _id} } = useContext(AppContext)

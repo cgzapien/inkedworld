@@ -1,6 +1,9 @@
 body {
  margin: 0;
 }
+.App {
+  background: #f3f3f3;
+}
 .threadLink:hover {
   text-decoration: underline;
   color: blue;
