@@ -51,11 +51,9 @@ export default function Profile(){
       <Box component="form" onSubmit={handleSubmit} sx={{padding: "20px"}}>
         <Typography><u>Member since: {monthAndYear}</u></Typography>
         <br/>
-        {/* <Typography>username:</Typography> */}
         <FormLabel style={labelPos}>username:</FormLabel>
         <TextField
           placeholder="username"
-          //label="username"
           value={username.toLowerCase()}
           name="username"
           onChange={handleChange}

@@ -24,7 +24,6 @@ export default function AppProvider(props){
   function login(credentials){
     axios.post("/auth/login", credentials)
       .then(res => {
-        console.log(res)
         const { token, user } = res.data
         localStorage.setItem("token", token)
         localStorage.setItem("user", JSON.stringify(user))
@@ -39,7 +38,6 @@ export default function AppProvider(props){
   function signUp(credentials){
     axios.post("/auth/signup", credentials)
       .then(res => {
-        console.log(res)
         const { token, user } = res.data
         localStorage.setItem("token", token)
         localStorage.setItem("user", JSON.stringify(user))

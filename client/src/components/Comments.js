@@ -56,7 +56,8 @@ export default function Comments(props){
   useEffect(() => {
     getCommentsOnComments()
     getUser()
-  })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   return (
     <div style={{margin: "10px 0px"}}>
       <Icon fontSize="small"><PersonIcon/></Icon> <span>{username} - {threadcomment}</span> <span>{date}</span><br/>

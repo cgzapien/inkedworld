@@ -12,7 +12,8 @@ export default function CommentOnComment(props){
     axios.get(`/auth/${user}`)
       .then(res => setUsername(res.data))
       .catch(err => console.log(err))
-  })
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   return (
     <div style={{marginLeft: "25px", marginBottom: '5px'}}>
       <Typography><Icon fontSize="small"><PersonIcon></PersonIcon></Icon> {username} - {commentOnComment} - {date}</Typography>

@@ -50,7 +50,7 @@ export default function ThreadDetails(){
   //---GET COMMENTS---//
   function getComments(){
     userAxios.get(`/api/thread/comment/threadcomments/${threadId}`)
-      .then(res => {console.log(res)
+      .then(res => {
       setCommentsList(() => [...res.data])
       })
       .catch(err => console.log(err))
@@ -64,7 +64,7 @@ export default function ThreadDetails(){
 //---DELETE COMMENT---//
   function deleteComment(id){
     userAxios.delete(`/api/thread/comment/${id}`)
-      .then(res => {console.log(res)
+      .then(res => {
       setCommentsList(prevComments => prevComments.filter(comment => comment._id !== id))
       })
       .catch(err => console.log(err))
@@ -73,9 +73,10 @@ export default function ThreadDetails(){
   useEffect(() => {
     getThread()
     getComments()
-  })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   return (
-    <div style={{marginLeft: "10px"}}>
+    <div style={{marginLeft: "10px", height: "100vh"}}>
       <Typography variant="h5"><u>Title: </u>{threadName}</Typography>
       <Typography variant="h5"><u>Topic: </u>{topic}</Typography>
       <Button onClick={toggleComment}><Typography variant="caption">-comment-</Typography></Button>

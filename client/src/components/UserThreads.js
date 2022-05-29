@@ -9,7 +9,7 @@ export default function UserThread(props){
   const {threadName, topic, _id, dateCreated} = props
   const date = new Date(dateCreated).toLocaleDateString()
   return (
-    <div className="userThread" style={{textAlign: "center"}}>
+    <div className="userThread" style={{textAlign: "center", background: "inherit"}}>
       {/* <CssBaseline/> */}
         <Paper variant="outlined" square >
           <Typography>Title: {threadName}</Typography>

@@ -1,13 +1,11 @@
-import { Button, Typography } from "@mui/material";
-import {useContext, useState} from "react";
+import { Typography } from "@mui/material";
+import {useContext} from "react";
 import {AppContext} from "../Context/AppProvider";
 import NewThreadForm from "./Forms/NewThreadForm";
 import UserThread from "./UserThreads";
 import "../css/Home.css"
 export default function Home(){
-  const [toggleForm, setToggleForm] = useState(false)
-  const {user: {username}, userThreads, addThread} = useContext(AppContext)
-  const user = username[0].toUpperCase() + username.slice(1)
+  const { userThreads, addThread } = useContext(AppContext)
   return (
     <div style={{display: "relative", marginLeft: "10px", height: "100vh"}}>
       <Typography 
@@ -17,14 +15,7 @@ export default function Home(){
       </Typography>
       <br/>
       <div className="Home">
-        <NewThreadForm addThread={addThread} setToggleForm={setToggleForm}/>
-        {/* {toggleForm ? 
-          <NewThreadForm addThread={addThread} setToggleForm={setToggleForm}/>
-        :
-        <div style={{textAlign: "center"}}>
-          <Button variant="outlined" onClick={() => setToggleForm((prevState) => !prevState )}>Create Thread</Button>
-        </div>
-        } */}
+        <NewThreadForm addThread={addThread}/>
         <div 
         style={{marginTop: "55px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr"}}
         >
