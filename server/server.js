@@ -9,7 +9,7 @@ const cors = require("cors")
 
 app.use(express.json())
 app.use(morgan("dev"))
-
+//app.use(cors({origin: "https://rockthevote.netlify.app"}))
 mongoose.connect(
    "mongodb://localhost:27017/capstone-db",
   {

@@ -69,7 +69,7 @@ export default function Comments(props){
         :
         commentsOnCommentsList.map(comment => <CommentOnComment key={comment._id} {...comment}/>)
       }
-      <Divider/>
+      <Divider sx={{width: "500px"}}/>
       {commentReply ? 
         <>
           <TextField

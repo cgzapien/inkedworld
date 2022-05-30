@@ -76,10 +76,12 @@ export default function ThreadDetails(){
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
-    <div style={{marginLeft: "10px", height: "100vh"}}>
-      <Typography variant="h5"><u>Title: </u>{threadName}</Typography>
-      <Typography variant="h5"><u>Topic: </u>{topic}</Typography>
-      <Button onClick={toggleComment}><Typography variant="caption">-comment-</Typography></Button>
+    <div style={{position: "relative", height: "100vh", top: "50px", left: "50px"}}>
+      <div>
+        <Typography variant="h5"><u>Title: </u>{threadName}</Typography>
+        <Typography variant="h5"><u>Topic: </u>{topic}</Typography>
+        <Button onClick={toggleComment}><Typography variant="caption">-comment-</Typography></Button>
+      </div>
       <br/>
       {commentsList === undefined ?
         <></>
